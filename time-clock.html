@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>time clock</title>
+</head>
+<style type="text/css">
+
+  .container{
+  	background: solid black 2px;
+  	background: black;
+  
+    position: relative;
+  	margin: auto ;
+  	width: 200px;
+  	height:200px ;
+  	border-radius: 100px;
+  }
+  #hour , #minute ,#second{
+  	position: absolute;
+  	background:black ;
+  	border-radius: 10px;
+  }
+  #hour{
+  	
+    top: 22%;
+    left: 48.7%;
+    height: 52px;
+    width: 3px;
+    transform-origin: bottom;
+  	background-color:white;
+  	opacity: 0.8;
+  	/*transition: all 0.5s ease-in;*/
+  	/*display: none;*/
+  	/*transform: translate(-50%,-100%)rotate(0deg);
+  */
+  	
+  }
+  #minute{
+  	
+    top: 16%;
+    left: 48.8%;
+    height: 64px;
+    width: 3px;
+    transform-origin:bottom;
+  	/*transition: all 0.5s ease-in;*/
+  	background-color:white ;
+  	transform: translate(-50%,-100%)rotate(0deg);
+  	
+  }
+#second{
+	
+    top: 14px;
+    left: 49.8%;
+    height: 81px;
+    width: 1.5px;
+    transform-origin: bottom;
+  	background-color:red ;
+
+  	/*transition: all 0.2s ease-in;*/
+  /*	transform: translate(-50%,-100%)rotate(0deg);*/
+
+}
+#circle{
+	width: 11px;
+	height: 11px;
+	border-radius: 50px;
+	border-style: dotted;
+	background-color: #e74c3c;
+	position: absolute;
+	content: '';
+	top: 95px;
+  	left: 99px;
+  	transform: translate(-50%,-50%);
+  	opacity: 0.9;
+}
+#after{
+	position: absolute;
+	top: 1.78px;
+  	left: 1.8px;
+  	/*border-style: outset;*/
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background:black;
+	opacity: 0.8;
+}
+#times{
+	background-color: green;
+	height: 30px;
+	width: 109px;
+	border-radius: 8%;
+
+	position: absolute;
+	top: 190px;
+	left: 36px;
+	padding: 10px;
+	color: white;
+	
+}
+#innertime{
+	height: 16px;
+	width: 16px;
+	background-color: white;
+	position: absolute;
+	top: 128px;
+	left: 138px;
+  border-radius: 50%;
+}
+.num{
+	color: white;
+	position: relative;
+	top: 8px;
+	left: 95.4px;
+}
+#num1{
+	position: relative;
+	top: 139px;
+	left: 95.6;
+}
+
+
+ span{
+	position: absolute;
+	inset: 9px;
+	color: white;
+	text-align: center;
+	transform: rotate(calc(30deg * var(--i)));
+}
+ b{
+	font-size: 1em;
+	opacity: 0.6;
+	font-weight: 600;
+	display: inline-block;
+	transform: rotate(calc(-30deg * var(--i)));
+}
+
+
+	
+	
+
+</style>
+<body>
+	<div class="container">
+		
+		<div class="clock">
+			<span style="--i:1;"><b>1</b></span>
+			<span style="--i:2;"><b>2</b></span>
+			<span style="--i:3;"><b>3</b></span>
+			<span style="--i:4;"><b>4</b></span>
+			<span style="--i:5;"><b>5</b></span>
+			<span style="--i:6;"><b>6</b></span>
+			<span style="--i:7;"><b>7</b></span>
+			<span style="--i:8;"><b>8</b></span>
+			<span style="--i:9;"><b>9</b></span>
+			<span style="--i:10;"><b>10</b></span>
+			<span style="--i:11;"><b>11</b></span>
+			<span style="--i:12;"><b>12</b></span>
+		</div>
+
+		<div class="cird">
+		<div id="hour"></div>
+		<div id="minute"></div>
+		<div id="second"></div>
+	</div>
+		<div id="circle">
+		<div id="after"></div>
+		</div>
+		<div id="innertime"><b>00</b></div>
+		
+<p id="times">00 : 00 : 00</p>
+</div>
+
+	<script type="text/javascript">
+		setInterval(()=>
+		{
+          d = new Date();
+          htime = d.getHours();
+
+          mtime = d.getMinutes();
+          stime = d.getSeconds();
+          
+          hrotation = 30*htime + mtime/2;
+          mrotation = 6*mtime;
+          srotation = 6*stime;
+		
+		hour.style.transform =`rotate(${hrotation}deg)`;
+		minute.style.transform =`rotate(${mrotation}deg)`;
+		second.style.transform =`rotate(${srotation}deg)`;
+		
+		let ampm = htime>=12 ?'PM':'AM'
+		console.log(htime);
+		document.getElementById("innertime").innerHTML=stime<=9?"0"+stime:stime;
+		document.getElementById("times").innerHTML=`${htime} : ${mtime} : ${stime<=9?"0"+stime:stime} : ${ampm}`;
+		},1000);
+		
+
+	</script>
+
+</body>
+</html>
