@@ -1,0 +1,90 @@
+*,
+  *: before,
+  *: after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    width:90vw;
+    background: rgb(100, 96, 96);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+    .container{
+    width: 40vw;
+    min-width: 500px;
+    background: linear-gradient(#3c4759,#121821, #0f1012) ;
+    margin: auto;
+    border-radius:10px;
+    padding: 20px 0;
+    box-shadow: 1px 1px 2px azure,-1px -1px 2px azure;
+    margin-top: 20px ; 
+  }
+  #stopwatched{
+    color:cyan;
+    font-size: 25px;
+    margin:6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #timeDisplay{
+   position: relative;
+   left: -24px;
+   padding: 25px 0;
+   font-weight: bold;
+   background-color:rgb(82, 94, 94);
+   border-radius: 20px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 110%;
+   font-size: 30px;
+   color: red;
+   box-shadow: 2px 3px 2px azure,-2px -3px 2px azure;
+  }
+  #button{
+    width: 80%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+  } 
+  #button .butt{
+    padding: 8px 20px;
+    font-weight:bold;
+    color: #141313;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+.butt:hover{
+  box-shadow: 1px 2px 2px azure,-3px -2px 2px azure;
+  background: cyan !important;
+  color: firebrick !important;
+  text-decoration: underline;
+  }
+  .lap{
+    width:20rem;
+    position:relative;
+    left:54px;
+    top:18px;
+    padding:5px;
+    margin:10px;
+  }
+  #list{
+  font-size:15px;
+  color:white;
+  }
+  li{
+  border-top: 1px solid cyan;
+  border-bottom: px solid cyan;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}

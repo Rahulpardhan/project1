@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>stopwatch</title>
+</head>
+
+  <link href="ClockCss.css" rel="stylesheet" type="text/css"/>
+
+<body>
+     <div class="container">
+
+      <div id="stopwatched">STOPWATCH</div>
+      <div id="timeDisplay">
+          00 : 00 : 00 : 00
+      </div>
+
+      <div id="button">
+      <button class="butt" id="startTimer">START</button>  
+      <button class="butt" id="pauseTimer">PAUSE</button>
+      <button class="butt" id="resetTimer">RESET</button>
+      <button class="butt" onClick="lapr()">LAP</button>
+      </div>
+      <div class="lap" >
+      <ul id="list"></ul>
+      </div>
+      </div>
+<script  src="ClockJS.js"></script>
+
+</body>
+</html>
